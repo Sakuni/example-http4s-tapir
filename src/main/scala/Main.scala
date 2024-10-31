@@ -96,14 +96,20 @@ object Main extends IOApp {
     Http4sServerInterpreter[IO]().toRoutes(
       updateBookEndpoint.serverLogicSuccess { case (title, updatedBook) =>
         IO {
-          val updatedBooks = books.get().map {
+          val currentBooks = books.get()
+          val updatedBooks = currentBooks.map {
             case book if book.title == title => updatedBook
             case book => book
           }
-          books.set(updatedBooks)
-          s"Book '${updatedBook.title}' updated successfully!"
+          if (currentBooks.exists(_.title == title)) {
+            books.set(updatedBooks) // Update the books list
+            s"Book '${updatedBook.title}' updated successfully!"
+          } else {
+            s"Error: Book with title '$title' not found!"
+          }
         }
-      })
+      }
+    )
 
   // generating and exposing the documentation in yml
   val swaggerUIRoutes: HttpRoutes[IO] =
