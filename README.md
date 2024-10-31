@@ -3,7 +3,7 @@ Integration of tapir-swagger-ui-bundle with http4s service to auto generate open
 referenced: 
 https://tapir.softwaremill.com/en/latest/tutorials/02_openapi_docs.html 
 
-https://github.com/softwaremill/tapir/blob/6b31453a178e855c7e90f261f7768a33a6637ce9/examples/src/main/scala/sttp/tapir/examples/openapi/MultipleEndpointsDocumentationHttp4sServer.scala#L6
+https://github.com/softwaremill/tapir/blob/6b31453a178e855c7e90f261f7768a33a6637ce9/examples/src/main/scala/sttp/tapir/examples/openapi/MultipleEndpointsDocumentationHttp4sServer.scala
 
 ![image](https://github.com/user-attachments/assets/dab3430a-2d83-44ec-870d-4ab741327e89)
 
